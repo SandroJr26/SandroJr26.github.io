@@ -1,0 +1,156 @@
+.contato {
+  max-width: 100%;
+  height: 320px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0px 80px;
+  background: #000000;
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.contato::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 5px;
+  background: var(--separador);
+}
+
+.contato-disponivel {
+  color: var(--colorTextContato);
+  font-family: "Oswald", Arial, Helvetica, sans-serif;
+  font-weight: 400;
+  font-size: 1.5rem;
+  width: 350px;
+  align-self: center;
+  justify-self: center;
+}
+
+.perfil-contato {
+  width: 320px;
+  align-self: center;
+  justify-self: center;
+}
+
+.redeSocial,
+.link {
+  display: grid;
+  color: var(--colorTextContato);
+  font-size: 1.5rem;
+  font-family: "Oswald", Arial, Helvetica, sans-serif;
+  line-height: 1.7;
+}
+
+.link {
+  max-width: 220px;
+}
+
+.logo {
+  position: absolute;
+  width: 20px;
+  margin-left: -30px;
+  margin-top: 13px;
+  align-items: center;
+}
+
+.link {
+  text-decoration: none;
+}
+
+.localizado {
+  font-weight: 200;
+  color: var(--colorLoc);
+  margin-top: 15px;
+}
+
+@media (max-width: 1200px) {
+  .contato-disponivel,
+  .redeSocial,
+  .link {
+    font-size: 1.5rem;
+  }
+  .perfil-contato {
+    width: 280px;
+  }
+}
+
+@media (max-width: 1000px) {
+  .contato-disponivel,
+  .redeSocial,
+  .link {
+    font-size: 1rem;
+  }
+  .redeSocial,
+  .link {
+    line-height: 2;
+  }
+  .link {
+    max-width: 150px;
+  }
+  .perfil-contato {
+    width: 250px;
+  }
+  .contato-disponivel {
+    width: 230px;
+  }
+  .localizado {
+    font-size: 1rem;
+    margin-top: 10px;
+  }
+  .logo {
+    width: 15px;
+    margin-top: 10px;
+    margin-left: -20px;
+  }
+}
+
+@media (max-width: 800px) {
+  .contato-disponivel,
+  .redeSocial,
+  .link {
+    font-size: 0.875rem;
+  }
+  .link {
+    max-width: 130px;
+  }
+  .contato-disponivel {
+    width: 200px;
+  }
+  .localizado {
+    font-size: 0.875rem;
+  }
+  .logo {
+    width: 13px;
+    margin-top: 9px;
+    margin-left: -18px;
+  }
+}
+
+@media (max-width: 700px) {
+  .contato {
+    grid-template-columns: 1fr;
+  }
+  .contato-disponivel {
+    margin-left: -80px;
+  }
+  .perfil-contato {
+    margin-left: -130px;
+    margin-top: -80px;
+    width: 150px;
+  }
+  .localizado {
+    position: absolute;
+    bottom: 20px;
+  }
+}
+
+@media (max-width: 400px) {
+  .contato-disponivel {
+    margin-left: -30px;
+  }
+  .perfil-contato {
+    margin-left: -80px;
+  }
+}

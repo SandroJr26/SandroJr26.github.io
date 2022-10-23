@@ -1,0 +1,63 @@
+.caixa {
+  display: grid;
+  justify-content: center;
+  background-image: var(--background-image);
+  box-shadow: 2px 2px 20px rgba(0, 0, 0, 10%);
+  max-width: 280px;
+  border-radius: 4px;
+  padding: 20px 40px;
+}
+
+.introducao {
+  max-width: 800px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 100px;
+  align-items: center;
+  margin-bottom: 80px;
+}
+
+.introducao h1 {
+  font-size: 2.5rem;
+  font-family: "Oswald";
+  font-weight: 600;
+  line-height: 1.13;
+}
+
+@media (max-width: 800px) {
+  .introducao {
+    grid-template-columns: 0.5fr 1fr;
+    gap: 20px;
+  }
+  .introducao h1 {
+    font-size: 2rem;
+    margin: 0px;
+  }
+  .introducao img {
+    width: 200px;
+    padding: 10px;
+  }
+  .caixa {
+    width: 250px;
+    padding: 10px 5px;
+  }
+}
+
+@media (max-width: 600px) {
+  .introducao {
+    grid-template-columns: 1fr;
+    padding: 5px;
+  }
+
+  .introducao h1 {
+    font-size: 1.5rem;
+  }
+  .introducao img {
+    display: none;
+  }
+  .caixa {
+    width: 200px;
+    justify-self: center;
+  }
+}

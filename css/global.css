@@ -1,0 +1,69 @@
+:root {
+  --buttonNameColor: #141414;
+  --cursosColor: #0b4645;
+  --colorTextContato: #cccccc;
+  --colorLoc: #b8b8b8;
+  --colorTextEXP: #141414;
+  --colorTextMenu: #292929;
+  --backgroundPerfil: #141414;
+  --borderNivel: #097978;
+  --colorCursoAno: #525252;
+  --backgroundMenu: #e7e7e7;
+  --background-image: linear-gradient(#83f5f4, #2abcba);
+  --separador: linear-gradient(#2abdbb, #1e9391);
+  --backgroundPage: #fff;
+  --colorMarca: black;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --backgroundPage: #292929;
+    --colorTextContato: #cccccc;
+    --borderCursos: 1px solid var(--borderNivel);
+    --background-image: linear-gradient(#2d807e, #104d4b);
+    --colorMarca: white;
+    --cursosColor: #6bb4b3;
+    --colorLoc: #b8b8b8;
+    --borderNivel: #1a6361;
+    --separador: linear-gradient(#125857, #0a3b3b);
+    --colorTextEXP: #fafafa;
+    --colorCursoAno: #cccccc;
+    --colorTextMenu: #cccccc;
+    --backgroundMenu: #202020;
+  }
+}
+
+body {
+  font-family: "Oswald", Arial, Helvetica, sans-serif;
+  margin: 0px;
+  color: var(--buttonNameColor);
+  background: var(--backgroundPage);
+}
+
+h1,
+h2,
+h3,
+p {
+  margin: 0px;
+}
+
+ul {
+  margin: 0px;
+  padding: 0px;
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.global {
+  font-size: 2.5em;
+  font-family: "Oswald", Arial, Helvetica, sans-serif;
+  font-weight: 500;
+  color: var(--cursosColor);
+  margin-left: 30px;
+  text-transform: uppercase;
+}

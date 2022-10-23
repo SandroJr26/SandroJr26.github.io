@@ -1,0 +1,68 @@
+.perfil {
+  max-width: 100%;
+  margin-top: 80px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 50px 80px;
+  background: var(--backgroundPerfil);
+  border-radius: 4px 4px 0px 0px;
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-items: center;
+}
+
+.sobre {
+  width: 500px;
+  color: var(--colorTextContato);
+  font-family: "Oswald", Arial, Helvetica, sans-serif;
+  font-size: 2rem;
+  text-align: start;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.idiomaNivel {
+  display: contents;
+  font-weight: 300;
+  color: var(--colorCursoAno);
+}
+
+.perfil::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 5px;
+  background: var(--separador);
+  border-radius: 3px 3px 0px 0px;
+}
+
+@media (max-width: 1200px) {
+  .sobre {
+    font-size: 1.5rem;
+    width: 400px;
+  }
+  .perfil {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 1000px) {
+  .sobre {
+    width: 350px;
+    font-size: 1.125rem;
+  }
+}
+
+@media (max-width: 800px) {
+  .sobre {
+    font-size: 0.875rem;
+    width: 280px;
+  }
+}
+
+@media (max-width: 400px) {
+  .sobre {
+    width: 230px;
+  }
+}
