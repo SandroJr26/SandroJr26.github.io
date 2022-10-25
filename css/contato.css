@@ -34,17 +34,14 @@
   justify-self: center;
 }
 
-.redeSocial,
 .link {
   display: grid;
   color: var(--colorTextContato);
   font-size: 1.5rem;
   font-family: "Oswald", Arial, Helvetica, sans-serif;
-  line-height: 1.7;
-}
-
-.link {
+  line-height: 1.8;
   max-width: 220px;
+  text-decoration: none;
 }
 
 .logo {
@@ -55,10 +52,6 @@
   align-items: center;
 }
 
-.link {
-  text-decoration: none;
-}
-
 .localizado {
   font-weight: 200;
   color: var(--colorLoc);
@@ -67,7 +60,6 @@
 
 @media (max-width: 1200px) {
   .contato-disponivel,
-  .redeSocial,
   .link {
     font-size: 1.5rem;
   }
@@ -78,15 +70,11 @@
 
 @media (max-width: 1000px) {
   .contato-disponivel,
-  .redeSocial,
   .link {
     font-size: 1rem;
   }
-  .redeSocial,
   .link {
     line-height: 2;
-  }
-  .link {
     max-width: 150px;
   }
   .perfil-contato {
@@ -108,7 +96,6 @@
 
 @media (max-width: 800px) {
   .contato-disponivel,
-  .redeSocial,
   .link {
     font-size: 0.875rem;
   }
