@@ -8,24 +8,34 @@
   border-radius: 4px 4px 0px 0px;
   position: relative;
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: 1fr 1fr;
   justify-items: center;
 }
 
-.sobre {
-  width: 500px;
+.sobre,
+.trabalho-atual {
+  max-width: 450px;
   color: var(--colorTextContato);
   font-family: "Oswald", Arial, Helvetica, sans-serif;
-  font-size: 2rem;
+  font-size: 1.5rem;
   text-align: start;
   margin-left: auto;
   margin-right: auto;
 }
 
-.idiomaNivel {
-  display: contents;
-  font-weight: 300;
-  color: var(--colorCursoAno);
+.trabalho-atual p {
+  margin-bottom: 20px;
+}
+
+.trabalho-atual a {
+  color: var(--colorLoc);
+  text-decoration: none;
+  padding: 12px 0;
+  margin-right: 32px;
+}
+
+.trabalho-atual a:hover {
+  color: #ffffff;
 }
 
 .perfil::before {
@@ -38,9 +48,11 @@
 }
 
 @media (max-width: 1200px) {
-  .sobre {
-    font-size: 1.5rem;
-    width: 400px;
+  .trabalho-atual {
+    max-width: 300px;
+  }
+  .trabalho-atual a {
+    margin-right: 20px;
   }
   .perfil {
     justify-content: center;
@@ -48,21 +60,27 @@
 }
 
 @media (max-width: 1000px) {
-  .sobre {
-    width: 350px;
+  .sobre,
+  .trabalho-atual {
+    width: 280px;
     font-size: 1.125rem;
   }
 }
 
 @media (max-width: 800px) {
-  .sobre {
+  .sobre,
+  .trabalho-atual {
     font-size: 0.875rem;
-    width: 280px;
+    width: 200px;
   }
 }
 
-@media (max-width: 400px) {
+@media (max-width: 700px) {
+  .perfil {
+    grid-template-columns: 1fr;
+    margin-left: -80px;
+  }
   .sobre {
-    width: 230px;
+    margin-bottom: 32px;
   }
 }
