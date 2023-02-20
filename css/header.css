@@ -32,6 +32,23 @@
   background-color: #9c9c9c;
 }
 
+.dark-mode {
+  color: var(--cursosColor);
+}
+
+.dark-mode label {
+  display: block;
+  background-color: var(--colorTextMenu);
+  border-radius: 4px;
+  width: 20px;
+  height: 20px;
+  margin-top: 4px;
+}
+
+.dark-mode input {
+  display: none;
+}
+
 @media (max-width: 800px) {
   .header {
     flex-direction: column;

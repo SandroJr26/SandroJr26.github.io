@@ -15,22 +15,20 @@
   --colorMarca: #000000;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --backgroundPage: #292929;
-    --colorTextContato: #cccccc;
-    --borderCursos: 1px solid var(--borderNivel);
-    --background-image: linear-gradient(#2d807e, #104d4b);
-    --colorMarca: #ffffff;
-    --cursosColor: #6ca1a1;
-    --colorLoc: #969191;
-    --borderNivel: #1a6361;
-    --separador: linear-gradient(#125857, #0a3b3b);
-    --colorTextEXP: #fafafa;
-    --colorCursoAno: #cccccc;
-    --colorTextMenu: #cccccc;
-    --backgroundMenu: #202020;
-  }
+.dark-mode {
+  --backgroundPage: #292929;
+  --colorTextContato: #cccccc;
+  --borderCursos: 1px solid var(--borderNivel);
+  --background-image: linear-gradient(#2d807e, #104d4b);
+  --colorMarca: #ffffff;
+  --cursosColor: #6ca1a1;
+  --colorLoc: #969191;
+  --borderNivel: #1a6361;
+  --separador: linear-gradient(#125857, #0a3b3b);
+  --colorTextEXP: #fafafa;
+  --colorCursoAno: #cccccc;
+  --colorTextMenu: #cccccc;
+  --backgroundMenu: #202020;
 }
 
 body {
