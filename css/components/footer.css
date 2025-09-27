@@ -1,0 +1,217 @@
+/* Footer Component */
+
+.footer {
+    background: var(--color-secondary);
+    border-top: 1px solid var(--color-border);
+    margin-top: var(--spacing-4xl);
+}
+
+.footer__content {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--spacing-2xl);
+    padding: var(--spacing-3xl) 0;
+}
+
+.footer__info {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+}
+
+.footer__title {
+    font-size: var(--font-size-2xl);
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-foreground);
+    margin-bottom: var(--spacing-sm);
+}
+
+.footer__description {
+    font-size: var(--font-size-base);
+    color: var(--color-muted-foreground);
+    line-height: var(--line-height-relaxed);
+    max-width: 28rem;
+}
+
+.footer__location {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    font-size: var(--font-size-sm);
+    color: var(--color-muted-foreground);
+    padding: var(--spacing-xs) var(--spacing-sm);
+    background: var(--color-background);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-full);
+    width: fit-content;
+}
+
+.footer__location .icon {
+    color: var(--color-primary);
+    width: 14px;
+    height: 14px;
+}
+
+.footer__contact {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+}
+
+.footer__contact-title {
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-foreground);
+}
+
+.contact-links {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+}
+
+.contact-link {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    padding: var(--spacing-sm) var(--spacing-md);
+    font-size: var(--font-size-sm);
+    color: var(--color-primary);
+    background: var(--color-background);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    transition: all var(--transition-fast);
+    text-decoration: none;
+    position: relative;
+    overflow: hidden;
+}
+
+.contact-link::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(14, 165, 233, 0.1), transparent);
+    transition: left 0.5s ease;
+}
+
+.contact-link:hover::before {
+    left: 100%;
+}
+
+.contact-link:hover {
+    background: var(--color-primary);
+    color: var(--color-primary-foreground);
+    border-color: var(--color-primary);
+    transform: translateX(4px);
+    box-shadow: var(--shadow-md);
+}
+
+.contact-link:focus {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+}
+
+.contact-link__icon {
+    flex-shrink: 0;
+    transition: transform var(--transition-fast);
+}
+
+.contact-link:hover .contact-link__icon {
+    transform: scale(1.1);
+}
+
+/* Specific contact link styles */
+.contact-link[href^="mailto:"] .contact-link__icon {
+    color: #ea4335; /* Gmail red */
+}
+
+.contact-link[href^="tel:"] .contact-link__icon {
+    color: #34a853; /* Phone green */
+}
+
+.contact-link[href*="linkedin"] .contact-link__icon {
+    color: #0077b5; /* LinkedIn blue */
+}
+
+.contact-link[href*="github"] .contact-link__icon {
+    color: #333; /* GitHub dark */
+}
+
+[data-theme="dark"] .contact-link[href*="github"] .contact-link__icon {
+    color: #fff; /* GitHub white for dark theme */
+}
+
+.footer__bottom {
+    padding: var(--spacing-xl) 0;
+    border-top: 1px solid var(--color-border);
+    text-align: center;
+}
+
+.footer__copyright {
+    font-size: var(--font-size-sm);
+    color: var(--color-muted-foreground);
+}
+
+/* Responsive Design */
+@media (min-width: 768px) {
+    .footer__content {
+        grid-template-columns: 1fr 1fr;
+        align-items: start;
+    }
+    
+    .contact-links {
+        max-width: 20rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .footer__content {
+        grid-template-columns: 2fr 1fr;
+    }
+}
+
+/* Animation for contact links */
+@keyframes contactLinkFadeIn {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.contact-link {
+    animation: contactLinkFadeIn 0.6s ease-out forwards;
+}
+
+.contact-link:nth-child(1) { animation-delay: 0.1s; }
+.contact-link:nth-child(2) { animation-delay: 0.2s; }
+.contact-link:nth-child(3) { animation-delay: 0.3s; }
+.contact-link:nth-child(4) { animation-delay: 0.4s; }
+
+/* Accessibility improvements */
+@media (prefers-reduced-motion: reduce) {
+    .contact-link {
+        animation: none;
+    }
+    
+    .contact-link::before {
+        display: none;
+    }
+}
+
+/* High contrast mode */
+@media (prefers-contrast: high) {
+    .contact-link {
+        border-width: 2px;
+    }
+    
+    .footer__location {
+        border-width: 2px;
+    }
+}

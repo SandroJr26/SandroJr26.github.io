@@ -1,0 +1,194 @@
+/* Header and Navigation Styles */
+
+.header {
+    position: sticky;
+    top: 0;
+    z-index: var(--z-sticky);
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--color-border);
+    transition: all var(--transition-normal);
+}
+
+[data-theme="dark"] .header {
+    background: rgba(15, 23, 42, 0.95);
+}
+
+.header__content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 4rem;
+    gap: var(--spacing-md);
+}
+
+.header__brand {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+}
+
+.header__logo {
+    font-size: var(--font-size-xl);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-foreground);
+    letter-spacing: -0.025em;
+}
+
+.header__location {
+    display: none;
+    align-items: center;
+    gap: var(--spacing-xs);
+    font-size: var(--font-size-sm);
+    color: var(--color-muted-foreground);
+    padding: var(--spacing-xs) var(--spacing-sm);
+    background: var(--color-secondary);
+    border-radius: var(--radius-full);
+    border: 1px solid var(--color-border);
+}
+
+.header__location .icon {
+    width: 14px;
+    height: 14px;
+    color: var(--color-primary);
+}
+
+/* Navigation */
+.nav {
+    display: none;
+}
+
+.nav__list {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-lg);
+}
+
+.nav__link {
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-medium);
+    color: var(--color-foreground);
+    padding: var(--spacing-xs) var(--spacing-sm);
+    border-radius: var(--radius-md);
+    transition: all var(--transition-fast);
+    position: relative;
+}
+
+.nav__link:hover {
+    color: var(--color-primary);
+    background: var(--color-accent);
+}
+
+.nav__link:focus {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+}
+
+/* Theme Toggle Button */
+.theme-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: var(--radius-md);
+    background: var(--color-secondary);
+    border: 1px solid var(--color-border);
+    color: var(--color-foreground);
+    transition: all var(--transition-fast);
+    position: relative;
+    overflow: hidden;
+}
+
+.theme-toggle:hover {
+    background: var(--color-accent);
+    border-color: var(--color-primary);
+    transform: scale(1.05);
+}
+
+.theme-toggle:focus {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+}
+
+.theme-toggle__icon {
+    position: absolute;
+    transition: all var(--transition-normal);
+}
+
+.theme-toggle__icon--sun {
+    opacity: 1;
+    transform: rotate(0deg) scale(1);
+}
+
+.theme-toggle__icon--moon {
+    opacity: 0;
+    transform: rotate(180deg) scale(0.5);
+}
+
+[data-theme="dark"] .theme-toggle__icon--sun {
+    opacity: 0;
+    transform: rotate(-180deg) scale(0.5);
+}
+
+[data-theme="dark"] .theme-toggle__icon--moon {
+    opacity: 1;
+    transform: rotate(0deg) scale(1);
+}
+
+/* Mobile Menu (if needed in future) */
+.mobile-menu-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: var(--radius-md);
+    background: var(--color-secondary);
+    border: 1px solid var(--color-border);
+    color: var(--color-foreground);
+    transition: all var(--transition-fast);
+}
+
+.mobile-menu-toggle:hover {
+    background: var(--color-accent);
+    border-color: var(--color-primary);
+}
+
+/* Responsive Design */
+@media (min-width: 640px) {
+    .header__location {
+        display: flex;
+    }
+}
+
+@media (min-width: 768px) {
+    .nav {
+        display: block;
+    }
+    
+    .header__content {
+        gap: var(--spacing-xl);
+    }
+}
+
+/* Scroll behavior */
+.header.scrolled {
+    box-shadow: var(--shadow-sm);
+}
+
+/* Animation for header on scroll */
+@keyframes slideDown {
+    from {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.header.animate-in {
+    animation: slideDown 0.3s ease-out;
+}
